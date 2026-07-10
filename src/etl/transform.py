@@ -1,4 +1,5 @@
 import pandas as pd
+from src.utils.logger import logger
 
 def transform_customer_data(df: pd.DataFrame) -> pd.DataFrame:
     transformed_df = df.copy()
@@ -36,4 +37,5 @@ def transform_customer_data(df: pd.DataFrame) -> pd.DataFrame:
 
     transformed_df["days_since_last_purchase"] = transformed_df["days_since_last_purchase"].astype(int)
 
+    logger.info(f"Customer data transformed successfully. Rows: {len(transformed_df)}, Columns: {len(transformed_df.columns)}")
     return transformed_df
