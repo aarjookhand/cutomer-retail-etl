@@ -1,6 +1,7 @@
 from src.database import test_connection
 from src.extract import extract_customer_data
 from src.validate import validate_and_split_customer_data
+from src.transform import transform_customer_data
 
 if __name__ == "__main__":
     test_connection()
@@ -22,3 +23,7 @@ if __name__ == "__main__":
 
     invalid_df.to_csv("data/validation_output/invalid_customer_data.csv", index=False)   
     print("Invalid customer data saved to 'data/validation_output/invalid_customer_data.csv'.") 
+
+    transformed_df = transform_customer_data(valid_df)
+    transformed_df.to_csv("data/processed/transformed_customer_data.csv", index=False)
+    print("\nTransformed customer data saved to 'data/processed/transformed_customer_data.csv'.")
