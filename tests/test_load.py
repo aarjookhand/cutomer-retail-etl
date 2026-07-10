@@ -1,4 +1,5 @@
 from src.db.database import engine
+from src.db.schema import create_customer_table
 from test_data.valid_dataframe import create_valid_dataframe
 from src.etl.load import load_customer_data
 from src.etl.transform import transform_customer_data
@@ -8,6 +9,7 @@ def test_load_customer_data():
     df = create_valid_dataframe()
 
     with engine.begin() as conn:
+        create_customer_table(conn)
         conn.execute(text("DELETE FROM customers"))
 
     load_customer_data(transform_customer_data(df))
