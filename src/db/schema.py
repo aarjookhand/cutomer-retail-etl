@@ -47,7 +47,18 @@ VALUES (
     :days_since_last_purchase,
     :satisfaction_level
 )
-ON CONFLICT (customer_id) DO NOTHING;
+ON CONFLICT (customer_id) 
+DO UPDATE SET
+    gender = EXCLUDED.gender,
+    age = EXCLUDED.age,
+    city = EXCLUDED.city,
+    membership_type = EXCLUDED.membership_type,
+    total_spend = EXCLUDED.total_spend,
+    items_purchased = EXCLUDED.items_purchased,
+    average_rating = EXCLUDED.average_rating,
+    discount_applied = EXCLUDED.discount_applied,
+    days_since_last_purchase = EXCLUDED.days_since_last_purchase,
+    satisfaction_level = EXCLUDED.satisfaction_level;
 """
 
 

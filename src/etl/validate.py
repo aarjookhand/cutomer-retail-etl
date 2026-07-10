@@ -58,7 +58,6 @@ def validate_and_split_customer_data(
         df.loc[condition, "rejection_reason"] += reason + "; "
 
     flag(df["Customer ID"].isnull(), "missing customer id")
-    flag(df["Customer ID"].duplicated(keep=False), "duplicate customer id")
 
     flag(df["Age"].isnull(), "missing age")
     flag(df["Age"] < 0, "negative age")
