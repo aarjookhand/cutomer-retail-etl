@@ -1,5 +1,5 @@
 import pandas as pd
-from src.db.schema import create_customer_table, insert_customer_data   
+from src.db.customer_schema import create_customer_table, insert_customer_data   
 from sqlalchemy import text
 from src.db.database import engine
 from src.utils.logger import logger

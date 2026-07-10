@@ -1,5 +1,5 @@
 from src.db.database import engine
-from src.db.schema import create_customer_table
+from src.db.customer_schema import create_customer_table
 from test_data.valid_dataframe import create_valid_dataframe
 from src.etl.load import load_customer_data
 from src.etl.transform import transform_customer_data
