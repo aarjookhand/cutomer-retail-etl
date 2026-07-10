@@ -24,3 +24,5 @@ target/
 logs/
 
 
+data/validation_output/*.csv
+data/validation_output/.gitkeep
