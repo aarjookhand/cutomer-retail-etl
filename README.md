@@ -2,8 +2,9 @@
 
 ## Overview
 
-This project is an end-to-end ETL (Extract, Transform, Load) pipeline built with Python and PostgreSQL. It processes customer retail data from CSV file, validates data quality, transforms the dataset into a standardized format, and loads the cleaned records into a PostgreSQL database.
+This project is an end-to-end ETL pipeline built with Python and PostgreSQL. It processes customer retail data from a CSV file (an E-commerce Customer Behavior Dataset obtained from Kaggle) validates data quality, transforms the dataset into a standardized format, and loads the cleaned records into a PostgreSQL database.
 
+Dataset: https://www.kaggle.com/datasets/uom190346a/e-commerce-customer-behavior-dataset
 
 ## Features
 
@@ -115,7 +116,8 @@ docker compose up --build
 python -m src.main
 ```
 
----
+
+
 
 ## Sample Output
 
@@ -124,7 +126,7 @@ python -m src.main
 
 
 
-## Future Improvements
+## Room for Improvements
 
 * Incremental data loading
 * Support for multiple data sources
@@ -133,6 +135,6 @@ python -m src.main
 * Cloud deployment (AWS or Azure)
 * Workflow orchestration with Apache Airflow
 
----
+
 
 
